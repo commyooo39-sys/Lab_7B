@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic | Task Manager</title>
+    <link rel="stylesheet" href="./todo_logic.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="#" aria-label="Taskflow home">
+            <span class="brand-mark">T</span>
+            <span>Taskflow</span>
+        </a>
+        <span class="header-label">Tanakrit Saobai</span>
+    </header>
+    <main class="page-content">
+        <section class="page-intro" aria-labelledby="page-title">
+            
+            <h1 id="page-title">List Task </h1>
+        </section>
+        <section class="composer-card" aria-label="Add a task">
+            <form id="task-form">
+                <label class="sr-only" for="task-title">Task name</label>
+                <input id="task-title" type="text" placeholder="Add a task..." maxlength="100">
+                <label class="sr-only" for="prioLity">Priority</label>
+                <select id="prioLity">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button class="add-button" type="submit"><span aria-hidden="true">+</span> Add task</button>
+            </form>
+        </section>
+        <section class="tasks-card" aria-labelledby="tasks-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">STAY ON TRACK</p>
+                    <h2 id="tasks-title">Your tasks</h2>
+                </div>
+                <span class="list-indicator"><span></span> ACTIVE LIST</span>
+            </div>
+            <ul id="list-task">
+
+            </ul>
+
+        </section>
+    </main>
+    <script src="./todo_logic.js"></script>
+</body>
+
+</html>

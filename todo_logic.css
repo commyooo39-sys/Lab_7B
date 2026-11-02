@@ -1,0 +1,382 @@
+:root {
+    color-scheme: dark;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #f3f4f8;
+    background: #111827;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --muted: #a6afc0;
+    --accent: #c4b5fd;
+    --surface: #1b2434;
+    --line: #303b4d;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 50% -20%, rgba(119, 89, 205, 0.2), transparent 52%),
+        #11101a;
+}
+
+.site-header {
+    min-height: 76px;
+    padding: 0 max(24px, calc((100% - var(--page-width)) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    background: rgba(17, 16, 26, 0.7);
+}
+
+
+.composer-card {
+    border: 1px solid #f0f0f6;
+    border-radius: 19px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 34px rgba(15, 19, 97, 0.045);
+    padding: 10px 18px 10px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f4f2ff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+
+.page-content {
+    width: min(var(--page-width), calc(100% - 40px));
+    margin: 0 auto;
+    padding: 64px 0 80px;
+}
+
+.page-intro {
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+}
+
+.header-label {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: clamp(32px, 6vw, 46px);
+    letter-spacing: -0.045em;
+}
+
+
+
+
+.composer-card,
+.tasks-card {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(31, 29, 44, 0.96), rgba(24, 22, 34, 0.96));
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
+}
+
+.composer-card {
+    padding: 16px;
+    margin-bottom: 14px;
+
+}
+
+
+#task-form {
+    display: flex;
+    gap: 10px;
+}
+
+#task-title,
+#prioLity {
+    min-height: 48px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    outline: none;
+    background: #15131f;
+    color: #f4f2ff;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+#task-title {
+    min-width: 0;
+    flex: 1;
+    padding: 0 15px;
+}
+
+#task-title::placeholder {
+    color: #777287;
+}
+
+#prioLity {
+    padding: 0 32px 0 13px;
+    color: #d3cfe0;
+}
+
+
+#task-title:focus,
+#prioLity:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(183, 164, 255, 0.12);
+}
+
+.add-button,
+.task-actions button {
+    /*class = task-action อยู่ในtodo_logic.js*/
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 650;
+    cursor: pointer;
+    transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.add-button {
+    min-height: 48px;
+    padding: 0 17px;
+    background: var(--accent);
+    color: #211a33;
+}
+
+.add-button span {
+    margin-right: 5px;
+    font-size: 19px;
+}
+
+.add-button:hover,
+.task-actions button:hover {
+    transform: translateY(-1px);
+}
+
+
+.tasks-card {
+    padding: 24px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+
+
+
+h2 {
+    margin-bottom: 0;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+}
+
+.list-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.1em;
+}
+
+.list-indicator span {
+    /*วงกลมจุดเขียว*/
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #8ed7b2;
+    box-shadow: 0 0 12px rgba(142, 215, 178, 0.5);
+}
+
+
+#list-task {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 18px 0 0;
+    list-style: none;
+    /*ลบรูปเเบบของlist*/
+}
+
+#list-task li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 15px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(17, 16, 26, 0.56);
+    color: #e6e2f0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#list-task li {
+    align-items: center;
+}
+
+.task-details {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+}
+
+.task-field {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.task-property {
+    color: #b7a4ff;
+    font-weight: 700;
+}
+
+.task-value {
+    overflow-wrap: anywhere;
+    color: #eeeaf8;
+    font-weight: 400;
+}
+
+.task-value.is-completed {
+    color: #8ed7b2;
+}
+.task-value.high {
+    color: #dcbb13;
+}
+.task-value.medium {
+    color: #119bc5;
+}
+.task-value.low {
+    color: #4fe06a;
+}
+
+.task-actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 8px;
+}
+
+
+.task-actions button {
+    min-height: 34px;
+    padding: 0 11px;
+    border: 1px solid var(--line);
+    background: #211e2d;
+    color: #d9d3e8;
+    font-size: 12px;
+}
+
+.task-actions button:first-child:hover {
+    border-color: rgba(183, 164, 255, 0.55);
+    background: rgba(183, 164, 255, 0.12);
+}
+
+.task-actions button:last-child {
+    width: 36px;
+    padding: 0;
+}
+
+.task-actions button:last-child:hover {
+    border-color: rgba(255, 125, 143, 0.45);
+    background: rgba(255, 125, 143, 0.1);
+}
+
+
+
+/*
+position: absolute	นำ Element ออกจากตำแหน่งปกติของ Layout
+width: 1px	กำหนดความกว้างเหลือ 1px
+height: 1px	กำหนดความสูงเหลือ 1px
+overflow: hidden	ซ่อนเนื้อหาที่เกินขอบเขต
+clip: rect(0, 0, 0, 0)	ตัดพื้นที่การแสดงผลให้เหลือศูนย์
+white-space: nowrap	ป้องกันข้อความขึ้นบรรทัดใหม่
+clip-path: inset(50%)	ตัดพื้นที่การแสดงผลออกทั้งหมด
+*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+
+
+@media (max-width: 620px) {
+    .site-header {
+        min-height: 64px;
+        padding: 0 20px;
+    }
+
+    .page-content {
+        padding-top: 44px;
+    }
+
+    #task-form {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    #task-title {
+        grid-column: 1 / -1;
+    }
+
+    #prioLity,
+    .add-button {
+        width: 100%;
+    }
+
+    .tasks-card {
+        padding: 18px;
+    }
+
+    #list-task li {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .task-details {
+        width: 100%;
+        gap: 8px 14px;
+    }
+
+    .task-actions {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 380px) {
+    .header-label {
+        font-size: 8px;
+        font-weight: 800;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
